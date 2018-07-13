@@ -87,7 +87,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Daniel Pittman** - *Initial work* - [Qwoyn](https://github.com/Qwoyn)
+* **Daniel Pittman** - *Initial work*             - [Qwoyn](https://github.com/Qwoyn)
+* ** Bill Morris  ** - *Theory conceptualization* 
 
 See also the list of [contributors](https://github.com/Qwoyn/Document/contributors) who participated in this project.
 
@@ -97,7 +98,7 @@ This project is licensed under the Apache 2.0 - see the [LICENSE.md](LICENSE.md)
 
 ## Acknowledgments
 
-* thanks to 
+  thanks to 
 * chuckbergeron
 * ethereum core
 
