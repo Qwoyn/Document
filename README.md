@@ -103,7 +103,6 @@ This project is licensed under the Apache 2.0 - see the [LICENSE.md](LICENSE.md)
 
 ### Donate
 
-If you like our project please contribute by donating
+If you like our project please contribute by donating ETC
 
-etc
 0x007e60C669cf96dC32655d1Eb1c1eBcf96459975
