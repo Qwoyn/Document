@@ -4,23 +4,16 @@ Document ideas and items on the ethereum classic blockchain using an NFT smart c
 
 ## Getting Started
 
-You can find all relative source files pertaining to Document
+Access DQMT at [Ethereum Classic Wallet](https://ethereumproject.github.io/etherwallet/)
 
-### Prerequisites
-
-Web3j, Ethereum Classic Wallet
-
-```
-Create Ethereum Classic wallet via parity or using https://ethereumproject.github.io/etherwallet/
-```
-
-### Installing
-
-Access the contract at 
+or using Parity with contract address
 
 ```
 0xB12Bbc6D3E451fBC56f813297E314A5F8E118028
 ```
+
+and
+
 
 ABI/JSON Interface:
 
@@ -81,14 +74,9 @@ ABI/JSON Interface:
 
 Please read [CONTRIBUTING.md](https://github.com/Qwoyn/Document/contributing.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
 * **Daniel Pittman** - *Initial work*             - [Qwoyn](https://github.com/Qwoyn)
-* **Bill Morris** - *Theory conceptualization* 
 
 See also the list of [contributors](https://github.com/Qwoyn/Document/contributors) who participated in this project.
 
@@ -98,9 +86,10 @@ This project is licensed under the Apache 2.0 - see the [LICENSE.md](LICENSE.md)
 
 ## Acknowledgments
 
-  thanks to 
+  Big Thanks to 
 * chuckbergeron
 * ethereum core
+* Bill Morris
 
 ### Donate
 
