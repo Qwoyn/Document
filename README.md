@@ -74,7 +74,8 @@ Please read [CONTRIBUTING.md](https://github.com/Qwoyn/Document/contributing.md)
 
 ## Authors
 
-* **Daniel Pittman** - *Initial work*             - [Qwoyn](https://github.com/Qwoyn)
+* **Daniel Pittman**             - [Qwoyn](https://github.com/Qwoyn)
+* **Bill Morris   **   
 
 See also the list of [contributors](https://github.com/Qwoyn/Document/contributors) who participated in this project.
 
