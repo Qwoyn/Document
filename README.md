@@ -4,19 +4,17 @@ Document ideas and items on the ethereum classic blockchain using an NFT smart c
 
 ## Getting Started
 
-Access DQMT at [Ethereum Classic Wallet](https://ethereumproject.github.io/etherwallet/)
-
-or using Parity with contract address
+Access DQMT at [Ethereum Classic Wallet](https://ethereumproject.github.io/etherwallet/) or Parity
+using the parameters below.
 
 ```
+#Contract address on the ETC Blockchain
 0xB12Bbc6D3E451fBC56f813297E314A5F8E118028
 ```
 
-and
-
-
+```
 ABI/JSON Interface:
-
+```
 ```
 [{"constant":true,"inputs":[{"name":"_interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":
 [{"name":"","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,
