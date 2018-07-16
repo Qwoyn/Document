@@ -88,7 +88,6 @@ This project is licensed under the Apache 2.0 - see the [LICENSE.md](LICENSE.md)
   Big Thanks to 
 * chuckbergeron
 * ethereum core
-* Bill Morris
 
 ### Donate
 
