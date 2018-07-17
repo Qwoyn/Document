@@ -69,6 +69,22 @@ ABI/JSON Interface:
 "_owner","type":"address"},{"indexed":true,"name":"_operator","type":"address"},{"indexed":false,"name":"_approved","type":"bool"}],
 "name":"ApprovalForAll","type":"event"}]
 ```
+There are many functions available but the one that may interest you the most will be the ```buyToken``` function.  The tokens are free 
+but you will need to send some gas when executing the contract.  We built this dApp on the ETC blockchain so the gas price would stay low.
+
+List of available functions
+#Purchase a token -  this command will cost you gas
+#You will be required to name the tokenId when creating a token.  
+#Please type 1 for Ideas or 2 for Items.
+#Give your idea/item a title
+#Give your idea/item a description
+buyToken
+
+
+#View ideas or items
+getToken
+
+```
 
 ## Contributing
 
