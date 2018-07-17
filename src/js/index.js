@@ -54,14 +54,11 @@ const contractABI = [{"constant":true,"inputs":[{"name":"_interfaceId","type":"b
 "name":"ApprovalForAll","type":"event"}]
 
 
-
-Document = web3.eth.contract(abi);
-// In your nodejs console, execute contractInstance.address to get the address at which the contract is deployed and change the line below to use your deployed address
 const contractAddress = '0xB12Bbc6D3E451fBC56f813297E314A5F8E118028';
 const contractInstance = web3.eth.contract(contractABI).at(contractAddress);
 
 function buyToken() {
-    contractInstance.buyToken(web3.eth.accounts[0], (err, myProfile) => {
+    contractInstance.buyToken(web3.eth.accounts[0], (_type, _title, _description) => {
         if(err) return alert(err)
         
         let profileContent = ''
