@@ -58,27 +58,5 @@ const contractAddress = '0xB12Bbc6D3E451fBC56f813297E314A5F8E118028';
 const contractInstance = web3.eth.contract(contractABI).at(contractAddress);
 
 function buyToken() {
-    contractInstance.buyToken(web3.eth.accounts[0], (_type, _title, _description) => {
-        if(err) return alert(err)
-        
-        let profileContent = ''
-        myName = web3.toUtf8(myProfile[0])
-        let myOccupation = web3.toUtf8(myProfile[1])
-        let myBio = myProfile[2]
-profileContent += `
-            Name: <span id="my-name">${myName}</span> <br/>
-            Occupation: <span id="my-occupation">${myOccupation}</span> <br/>
-            Bio: <span id="my-bio">${myBio}</span> <br/>
-            <button id="set-profile-button" class="align-center" onclick="setProfile()">Set Profile</button>`
-        document.querySelector('#profile-content').innerHTML = profileContent
-    })
+    contractInstance.buyToken(web3.eth.accounts[0], (_type, _title, _description) => {)
 }
-
-$(document).ready(function() {
-  candidateNames = Object.keys(fields);
-  for (var i = 0; i < candidateNames.length; i++) {
-    let name = candidateNames[i];
-    let val = contractInstance.totalVotesFor.call(name).toString()
-    $("#" + candidates[name]).html(val);
-  }
-});
