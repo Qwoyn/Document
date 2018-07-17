@@ -58,5 +58,5 @@ const contractAddress = '0xB12Bbc6D3E451fBC56f813297E314A5F8E118028';
 const contractInstance = web3.eth.contract(contractABI).at(contractAddress);
 
 function buyToken() {
-    contractInstance.buyToken(web3.eth.accounts[0], (_type, _title, _description) => {)
+    contractInstance.buyToken(web3.eth.accounts[0], (_type, _title, _description) => {})
 }
