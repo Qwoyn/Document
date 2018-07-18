@@ -3,7 +3,3 @@ node_modules/
 
 #ignore webpack
 webpack.config.js
-
-#ignore package json
-package.json
-package-lock.json
