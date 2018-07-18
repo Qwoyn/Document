@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
+	
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
 <script src="./web3.js"></script>
 <script src="./index.js"></script>
     
@@ -27,7 +28,28 @@
 		<a href="#" onclick="buyToken()" class="btn btn-primary">Create Token</a>
 
     </div>
+<script>
+$(document).ready(function() {
+window.addEventListener('load', function() {
+  // Check if Web3 has been injected by the browser:
+  if (typeof web3 !== 'undefined') {
+    // You have a web3 browser! Continue below!
+    buyToken(web3);
+  } else {
+    alert("no web3 detected");
+  }
+})
+function buyToken(web3) {
+  ContractInstance.web3.eth.defaultAccount = ContractInstance.web3.eth.coinbase;
+  web3.eth.defaultAccount = web3.eth.accounts[0];
+  Document = web3.eth.contract(contractABI);
+  ContractInstance = Document.at('0xB12Bbc6D3E451fBC56f813297E314A5F8E118028');
+  // Enter new price
+  ContractInstance.buyToken(1,"hello", "world", {from: web3.eth.accounts[0]});
 
+}
+})
+</script>
 
 
 </html>

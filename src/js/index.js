@@ -54,9 +54,9 @@ const contractABI = [{"constant":true,"inputs":[{"name":"_interfaceId","type":"b
 "name":"ApprovalForAll","type":"event"}]
 
 
-const contractAddress = '0xB12Bbc6D3E451fBC56f813297E314A5F8E118028';
+const contractAddress = '0xC345212CAE57D8Aa2f02Fb34e89477F0276C2856';
 const contractInstance = web3.eth.contract(contractABI).at(contractAddress);
 
 function buyToken() {
-    contractInstance.buyToken(_type, _title, _description);
+    contractInstance.buyToken(1, "hello", "world");
 }
