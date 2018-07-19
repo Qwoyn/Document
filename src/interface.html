@@ -32,15 +32,16 @@
     </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-
+<script web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));></script>
 <script>
 
-        if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            // set the provider you want from Web3.providers
-            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-        }
+		if(typeof web3 != 'undefined'){
+         console.log("Using web3 detected from external source like Metamask")
+         this.web3 = new Web3(web3.currentProvider)
+		}else{
+         console.log("No web3 detected. Falling back to http://localhost:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
+ 
+      }
 		
 		web3.eth.defaultAccount = web3.eth.accounts[0];
 		
@@ -634,7 +635,7 @@
 	}
 ]);
 
-        var Document = DocumentContract.at('0x380578470c57f95fbe00a26f5a653bfe05c15fce');
+        var Document = DocumentContract.at('0xd30173a8bff3e4af917c4c83576ceec501384b82');
         console.log(Document);
 
         $("#button").click(function() {
