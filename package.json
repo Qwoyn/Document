@@ -1,14 +1,30 @@
 {
-  "name": "course",
-  "version": "1.0.0",
-  "description": "",
+  "name": "document",
+  "version": "0.1.6",
+  "description": "Document ideas and items on the ethereum classic blockchain using an NFT smart contract.  This smart contract is an easy way for users to interact with the ETC blockchain.  Web interface is still under construction but the contract is fully functional and accessible via the instructions below.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Daniel Pittman",
+  "license": "Apache-2.0",
   "dependencies": {
     "web3": "github:ethereum/web3.js"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qwoyn/Document.git"
+  },
+  "keywords": [
+    "nft",
+    "non-fungible",
+    "token",
+    "ethereum",
+    "classic"
+  ],
+  "bugs": {
+    "url": "https://github.com/Qwoyn/Document/issues"
+  },
+  "homepage": "https://github.com/Qwoyn/Document#readme"
 }
