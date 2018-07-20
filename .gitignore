@@ -4,4 +4,3 @@ node_modules/
 #ignore webpack
 webpack.config.js
 
-#
