@@ -991,5 +991,18 @@ contract Document is ERC721Token, Ownable {
   ) {
       price = currentPrice;
   }
+  /// @notice allows the owner of this contract to destroy the contract
+   function kill() public {
+	  if(msg.sender == owner) selfdestruct(owner);
+   }
+   
+/// @notice allows user to burn token, needs to be implemented
+/// function burn(uint256 _value) public {
+///   require(_value <= balances[msg.sender]);
+///   address burner = msg.sender;
+///   balances[burner] = balances[burner].sub(_value);
+///   totalSupply_ = totalSupply_.sub(_value);
+///   Burn(burner, _value);
+///   Transfer(burner, address(0), _value);}
 
 }
