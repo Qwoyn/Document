@@ -899,10 +899,17 @@ contract Document is ERC721Token, Ownable {
 
   /// Price set by contract owner for each token in Wei.
   /// @dev If you'd like a different price for each token type, you will
-  ///   need to use a mapping like: `mapping(uint256 => uint256) tokenTypePrices;`
-  uint256 currentPrice = 3000000000000000;
+  /// need to use a mapping like: `mapping(uint256 => uint256) tokenTypePrices;`
 
-  /// The token type (1 for idea, 2 for belonging, etc)
+  /*  @notice currentPrice variable
+      I have set my tokens to free but i feel its useful for other implementation
+
+      @dev if you'd like an inital price use
+
+      'uint256 currentPrice = 3000000000000000;'
+  */
+
+  /// The token type (1 for idea, 2 for item, etc)
   mapping(uint256 => uint256) tokenTypes;
 
   /// The title of the token
@@ -923,7 +930,7 @@ contract Document is ERC721Token, Ownable {
   function buyToken (
     uint256 _type,
     string _title,
-	string _description
+	  string _description
   ) external payable {
     bytes memory _titleBytes = bytes(_title);
     require(_titleBytes.length >= TITLE_MIN_LENGTH, "Title is too short");
@@ -932,7 +939,10 @@ contract Document is ERC721Token, Ownable {
 	bytes memory _descriptionBytes = bytes(_description);
     require(_descriptionBytes.length >= DESCRIPTION_MIN_LENGTH, "Description is too short");
     require(_descriptionBytes.length <= DESCRIPTION_MAX_LENGTH, "Description is too long");
+    
+/* currentPrice
     require(msg.value >= currentPrice, "Amount of Ether sent too small");
+*/
 
     uint256 index = allTokens.length + 1;
 
@@ -940,7 +950,7 @@ contract Document is ERC721Token, Ownable {
 
     tokenTypes[index] = _type;
     tokenTitles[index] = _title;
-	tokenDescription[index] = _description;
+	  tokenDescription[index] = _description;
 
     emit BoughtToken(msg.sender, index);
   }
@@ -961,28 +971,29 @@ contract Document is ERC721Token, Ownable {
 
   /// @notice Returns all the relevant information about a specific token
   /// @param _tokenId The ID of the token of interest
-  function getToken(uint256 _tokenId)
+  function viewToken(uint256 _tokenId)
     external
     view
     returns (
       uint256 tokenType_,
       string tokenTitle_,
-	  string tokenDescription_
+	    string tokenDescription_
   ) {
       tokenType_ = tokenTypes[_tokenId];
       tokenTitle_ = tokenTitles[_tokenId];
-	  tokenDescription_ = tokenDescription[_tokenId];
+	    tokenDescription_ = tokenDescription[_tokenId];
   }
 
-  /// @notice Allows the owner of this contract to set the currentPrice for each token
+/* @notice Allows the owner of this contract to set the currentPrice for each token
   function setCurrentPrice(uint256 newPrice)
     public
     onlyOwner
   {
       currentPrice = newPrice;
   }
+ */
 
-  /// @notice Returns the currentPrice for each token
+  /* @notice Returns the currentPrice for each token
   function getCurrentPrice()
     external
     view
@@ -991,9 +1002,11 @@ contract Document is ERC721Token, Ownable {
   ) {
       price = currentPrice;
   }
+*/
+
   /// @notice allows the owner of this contract to destroy the contract
    function kill() public {
 	  if(msg.sender == owner) selfdestruct(owner);
    }
-
+   
 }
