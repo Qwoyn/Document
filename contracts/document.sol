@@ -961,7 +961,7 @@ contract Document is ERC721Token, Ownable {
 
   /// @notice Returns all the relevant information about a specific token
   /// @param _tokenId The ID of the token of interest
-  function getToken(uint256 _tokenId)
+  function viewToken(uint256 _tokenId)
     external
     view
     returns (
