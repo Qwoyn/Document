@@ -40,11 +40,11 @@ web3 = require('web3')
          console.log("Using web3 detected from external source like Metamask")
          web3 = new Web3(web3.currentProvider)
 		}else{
-			console.log("Cannot find a web3 Provider")
+			console.log("Cannot find a web3 Provider")	
 			}
-		contract.setProvider(web3.currentProvider);
-		web3.eth.defaultAccount = web3.eth.accounts[0];
-		var DocumentContract = web3.eth.contract([
+	
+		Web3.eth.defaultAccount = Web3.eth.accounts[0];
+		var DocumentContract = Web3.eth.contract([
 	{
 		"anonymous": false,
 		"inputs": [
