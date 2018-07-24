@@ -36,15 +36,16 @@
 <script>
 web3 = require('web3')
 
+
 		if(typeof web3 != 'undefined'){
-         console.log("Using web3 detected from external source like Metamask")
-         web3 = new Web3(web3.currentProvider)
+      console.log("Using web3 detected from external source like Metamask")
+      this.web3 = new Web3(web3.currentProvider)
 		}else{
-			console.log("Cannot find a web3 Provider")	
-			}
+      this.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"))
+		}
 	
-		Web3.eth.defaultAccount = Web3.eth.accounts[0];
-		var DocumentContract = Web3.eth.contract([
+		
+		var DocumentContract = web3.eth.contract([
 	{
 		"anonymous": false,
 		"inputs": [
@@ -634,7 +635,7 @@ web3 = require('web3')
 	}
 ]);
 
-        var Document = DocumentContract.at('0xd30173a8bff3e4af917c4c83576ceec501384b82');
+        var Document = DocumentContract.at('0x34b3aa21f7519007f8A51E3a0D8dcB886DF3B711');
         console.log(Document);
 
         $("#button").click(function() {
