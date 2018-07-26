@@ -1,20 +1,19 @@
-(document).ready(function () {
- console.log("Okay I'm ready");
-	
-	var Web3 = require('web3');
-	var web3 = new Web3();
-
-	if (typeof web3 !== 'undefined') {
-    console.log("Using web3 detected from external source like Metamask");
-    web3 = new Web3(web3.setProvider(web3.currentProvider));
-
-	} else {
-		console.log("Using localhost");
-		web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-}
-		
-	
-		var DocumentContract = web3.eth.contract([
+<script src="https://rawgit.com/ethereum/web3.js/0.16.0/dist/web3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/ethjs@0.3.0/dist/ethjs.min.js"></script>
+<script>
+window.addEventListener('load', function() {
+ // Check if Web3 has been injected by the browser:
+ if (typeof web3 !== 'undefined') {
+ // You have a web3 browser! Continue below!
+ startApp(web3);
+ //alert("Web3");
+ } else {
+  alert("No web3 provider found");
+ // Warn the user that they need to get a web3 browser
+ // Or install MetaMask, maybe with a nice graphic.
+ }
+})
+const abi = [
 	{
 		"anonymous": false,
 		"inputs": [
@@ -602,14 +601,43 @@
 		"stateMutability": "view",
 		"type": "function"
 	}
-]);
+]
 
-        var Document = DocumentContract.at('0xC345212CAE57D8Aa2f02Fb34e89477F0276C2856');
-        console.log(Document);
-		
+const contract_address = '0xC345212CAE57D8Aa2f02Fb34e89477F0276C2856'
+const etherValue = web3.toWei(10, 'ether');
+function startApp(web3) {
+ //alert("entro");
+ const eth = new Eth(web3.currentProvider)
+ const token = eth.contract(abi).at(contract_address);
+ listenForClicks(token,web3)
+ //alert("Web3 Provider Detected");
+}
 
-        $("#button").click(function() {
-            Document.buyToken( $("#type").val(), $("#title").val(), $("#description").val());
-        });
-		
-});
+ 
+function listenForClicks (token, web3) {
+ var button = document.querySelector('button.updateChain')
+ web3.eth.getAccounts(function(err, accounts) { console.log(accounts); address = accounts.toString(); })
+ button.addEventListener('click', function() {
+ token.buyToken(1,"asdf","sfdasfsdaASDFAF",{from: address})
+ .then(function (txHash) {
+ console.log('Transaction sent')
+ console.dir(txHash)
+ alert('Transaction ' + txHash + ' sent succesfully!');
+ //waitForTxToBeMined(txHash)
+ })
+ .catch(console.error)
+ })
+}
+/*async function waitForTxToBeMined (txHash) {
+ let txReceipt
+ while (!txReceipt) {
+ try {
+ txReceipt = await eth.getTransactionReceipt(txHash)
+ } catch (err) {
+ return indicateFailure(err)
+ }
+ }
+ indicateSuccess()
+}*/
+</script>
+<button class="updateChain">Update ETC Blockchain!</button>
