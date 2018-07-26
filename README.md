@@ -6,6 +6,12 @@ is fully functional and accessible via the instructions below.
 
 ## Getting Started
 
+The easiest way of accessing the buyToken function which allows you to create a post on the ethereum blockchain is to visit
+[Qwoyn](https://qwoyn.io/document).  We are currently using the Ropsten testnet so please make sure metamask is connected to
+Ropsten instead of the main network.  To use the full functionality of the contract on the ETC blockchain please use the instructions
+below:
+
+
 Access DQMT at [Ethereum Classic Wallet](https://ethereumproject.github.io/etherwallet/) or Parity
 using the parameters below.
 
