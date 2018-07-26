@@ -615,10 +615,15 @@ function startApp(web3) {
 
  
 function listenForClicks (token, web3) {
+ var documentType = prompt("Please enter 1 for Idea, 2 for Item", "<type goes here>");
+ var documentTitle = prompt("Please enter a title", "<title goes here>");
+ var documentDescription = prompt("Please enter the description", "<description goes here>");
+
+
  var button = document.querySelector('button.updateChain')
  web3.eth.getAccounts(function(err, accounts) { console.log(accounts); address = accounts.toString(); })
  button.addEventListener('click', function() {
- token.buyToken(1,"asdf","sfdasfsdaASDFAF",{from: address})
+ token.buyToken(documentType,documentTitle,documentDescription,{from: address})
  .then(function (txHash) {
  console.log('Transaction sent')
  console.dir(txHash)
