@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
  startApp(web3);
  //alert("Web3");
  } else {
-  alert("No web3 provider found");
+  alert("No web3 provider found please install a provider such as metamask to interact with this dApp");
  // Warn the user that they need to get a web3 browser
  // Or install MetaMask, maybe with a nice graphic.
  }
@@ -605,16 +605,16 @@ const abi = [
 
 const contract_address = '0xC345212CAE57D8Aa2f02Fb34e89477F0276C2856'
 const etherValue = web3.toWei(10, 'ether');
+
 function startApp(web3) {
- //alert("entro");
  const eth = new Eth(web3.currentProvider)
  const token = eth.contract(abi).at(contract_address);
  listenForClicks(token,web3)
- //alert("Web3 Provider Detected");
 }
 
  
 function listenForClicks (token, web3) {
+
  var documentType = prompt("Please enter 1 for Idea, 2 for Item", "<type goes here>");
  var documentTitle = prompt("Please enter a title", "<title goes here>");
  var documentDescription = prompt("Please enter the description", "<description goes here>");
@@ -628,21 +628,11 @@ function listenForClicks (token, web3) {
  console.log('Transaction sent')
  console.dir(txHash)
  alert('Transaction ' + txHash + ' sent succesfully!');
- //waitForTxToBeMined(txHash)
  })
  .catch(console.error)
  })
 }
-/*async function waitForTxToBeMined (txHash) {
- let txReceipt
- while (!txReceipt) {
- try {
- txReceipt = await eth.getTransactionReceipt(txHash)
- } catch (err) {
- return indicateFailure(err)
- }
- }
- indicateSuccess()
-}*/
+
 </script>
+
 <button class="updateChain">Update ETC Blockchain!</button>
