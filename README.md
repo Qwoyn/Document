@@ -2,7 +2,8 @@
 
 Document ideas and items on the ethereum classic blockchain using an NFT smart contract.  This smart contract is
 an easy way for users to interact with the ETC blockchain.  Web interface is still under construction but the contract
-is fully functional and accessible via the instructions below.
+is fully functional and accessible via the instructions below. We've written an article at Medium.com explaining how to 
+deploy your own erc721 token using this smart contract as an example.  [View it here](https://medium.com/@danpittman_41978/building-an-erc721-non-fungible-token-smart-contract-and-using-metamask-to-interact-with-it-via-a-59583f0dd6c1) 
 
 ## Getting Started
 
