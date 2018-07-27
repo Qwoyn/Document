@@ -995,5 +995,7 @@ contract Document is ERC721Token, Ownable {
    function kill() public {
 	  if(msg.sender == owner) selfdestruct(owner);
    }
-
+   
+   function setA(uint) public returns (uint) {}
+   
 }
