@@ -602,24 +602,18 @@ const abi = [
 		"type": "function"
 	}
 ]
-
 const contract_address = '0xC345212CAE57D8Aa2f02Fb34e89477F0276C2856'
 const etherValue = web3.toWei(10, 'ether');
-
 function startApp(web3) {
  const eth = new Eth(web3.currentProvider)
  const token = eth.contract(abi).at(contract_address);
  listenForClicks(token,web3)
 }
-
  
 function listenForClicks (token, web3) {
-
  var documentType = prompt("Please enter 1 for Idea, 2 for Item", "<type goes here>");
  var documentTitle = prompt("Please enter a title", "<title goes here>");
  var documentDescription = prompt("Please enter the description", "<description goes here>");
-
-
  var button = document.querySelector('button.updateChain')
  web3.eth.getAccounts(function(err, accounts) { console.log(accounts); address = accounts.toString(); })
  button.addEventListener('click', function() {
@@ -632,7 +626,6 @@ function listenForClicks (token, web3) {
  .catch(console.error)
  })
 }
-
 </script>
 
 <button class="updateChain">Update ETC Blockchain!</button>
