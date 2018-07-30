@@ -2,17 +2,16 @@
 <script src="https://cdn.jsdelivr.net/npm/ethjs@0.3.0/dist/ethjs.min.js"></script>
 <script>
 window.addEventListener('load', function() {
- // Check if Web3 has been injected by the browser:
- if (typeof web3 !== 'undefined') {
- // You have a web3 browser! Continue below!
- startApp(web3);
- //alert("Web3");
- } else {
-  alert("No web3 provider found please install a provider such as metamask to interact with this dApp");
- // Warn the user that they need to get a web3 browser
- // Or install MetaMask, maybe with a nice graphic.
- }
+	// Check if Web3 has been injected by the browser:
+	if (typeof web3 !== 'undefined') {
+		// You have a web3 browser! Continue below!
+		startApp(web3);
+		console.log('Starting App')
+	} else {
+		alert("No web3 provider found please install a provider such as metamask to interact with this dApp");
+	}
 })
+
 const abi = [
 	{
 		"anonymous": false,
@@ -602,29 +601,39 @@ const abi = [
 		"type": "function"
 	}
 ]
+
 const contract_address = '0xC345212CAE57D8Aa2f02Fb34e89477F0276C2856'
 const etherValue = web3.toWei(10, 'ether');
+console.log(contract_address);
+
 function startApp(web3) {
- const eth = new Eth(web3.currentProvider)
- const token = eth.contract(abi).at(contract_address);
- listenForClicks(token,web3)
+	const eth = new Eth(web3.currentProvider)
+	const token = eth.contract(abi).at(contract_address);
+	listenForClicks(token,web3)
 }
  
 function listenForClicks (token, web3) {
- var documentType = prompt("Please enter 1 for Idea, 2 for Item", "<type goes here>");
- var documentTitle = prompt("Please enter a title", "<title goes here>");
- var documentDescription = prompt("Please enter the description", "<description goes here>");
- var button = document.querySelector('button.updateChain')
- web3.eth.getAccounts(function(err, accounts) { console.log(accounts); address = accounts.toString(); })
- button.addEventListener('click', function() {
- token.buyToken(documentType,documentTitle,documentDescription,{from: address})
- .then(function (txHash) {
- console.log('Transaction sent')
- console.dir(txHash)
- alert('Transaction ' + txHash + ' sent succesfully!');
- })
- .catch(console.error)
- })
+
+	var documentType = 1
+	var documentTitle = 'title'//document.getElementsByClassName('ideaTitle').value
+	var documentDescription = 'description'//document.getElementsByClassName('ideaDescription').value
+	var button = document.querySelector('button.updateChain')
+    console.log(documentType)
+	console.log(documentTitle)
+	console.log(documentDescription)
+	web3.eth.getAccounts(function(err, accounts) { 
+		console.log(accounts); address = accounts.toString(); 
+	})
+	
+	button.addEventListener('click', function() {
+		token.buyToken(documentType,documentTitle,documentDescription,{from: address})
+		.then(function (txHash) {
+			console.log('Transaction sent')
+			console.dir(txHash)
+			alert('Transaction ' + txHash + ' sent succesfully!');
+		})
+		.catch(console.error)
+	})
 }
 </script>
 
