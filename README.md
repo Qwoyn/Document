@@ -119,6 +119,12 @@ This project is licensed under the Apache 2.0 - see the [LICENSE.md](LICENSE.md)
 
 ### Donate
 
-If you like our project please contribute by donating ETC
+If you like our project please contribute by donating 
 
-0x007e60C669cf96dC32655d1Eb1c1eBcf96459975
+ETC: 0x007e60C669cf96dC32655d1Eb1c1eBcf96459975
+
+BTC: 15X8rjV7EaTtsC6BhrffuqH28LZpqZ9Tdi
+
+BCC: 1KrwR96hbCrLavAaWkXz2oy2F51ryohme1
+
+ETH: 0x00c24b3346AFc5c3710AFb27C86431ebB5ce8163
