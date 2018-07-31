@@ -6,17 +6,7 @@ window.addEventListener('load', function() {
 	if (typeof web3 !== 'undefined') {
 		// You have a web3 browser! Continue below!
 		startApp(web3);
-		console.log('
-                                  
-   (                              
- ( )\   (  (         (            
- )((_)  )\))(    (   )\ )   (     
-((_)_  ((_)()\   )\ (()/(   )\ )  
- / _ \ _(()((_) ((_) )(_)) _(_/(  
-| (_) |\ V  V // _ \| || || ' \)) 
- \__\_\ \_/\_/ \___/ \_, ||_||_|  
-                     |__/         
-')
+		console.log('Starting dApp')
 	} else {
 		alert("No web3 provider found please install a provider such as metamask to interact with this dApp");
 	}
